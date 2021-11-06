@@ -6,7 +6,7 @@
 /*   By: jnicolas <jnicolas@student.42quebec>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:20:02 by jnicolas          #+#    #+#             */
-/*   Updated: 2021/10/19 16:58:56 by jnicolas         ###   ########.fr       */
+/*   Updated: 2021/10/22 19:09:12 by jnicolas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	int	mem;
 
 	i = 0;
-	i = -1;
+	mem = -1;
 	while (s[i])
 	{
 		if (s[i] == (char)c)
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (s[i] == c)
 		return ((char *)&s[i]);
-	if (mem != 1)
-		return ((char *)&s[i]);
+	if (mem != -1)
+		return ((char *)&s[mem]);
 	return (NULL);
 }
